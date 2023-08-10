@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>
+        Game is over!
+        <%= firstPlayer %>'s score is <%= firstPlayerScore %> and <%= secondPlayer %>'s score is <%= secondPlayerScore %>
+    </h1>
+    <form action ="/cleanup" method="post">
+        <input id="submit-names" type="submit" value="New game!">
+    </form>
+     
+</body>
+</html>
