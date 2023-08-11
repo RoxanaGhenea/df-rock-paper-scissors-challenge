@@ -57,6 +57,16 @@ class RPSGameSet {
         }
         return this._initialSecondPlayerScore;  
     }
+
+    announceWinner() {
+        if (this._initialFirstPlayerScore > this._initialSecondPlayerScore) {
+            return `${this.firstPlayer().name} has won!`;
+        }
+        if (this._initialFirstPlayerScore < this._initialSecondPlayerScore) {
+            return `${this.secondPlayer().name} has won!`;
+        }
+        return "It's a tie.";
+    }
 }
  
 export default RPSGameSet;

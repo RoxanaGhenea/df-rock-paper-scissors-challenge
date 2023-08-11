@@ -19,6 +19,7 @@ router.post("/", (req, res) => {
     const currentMatchResultPlayer2 = CurrentMatch.player2Wins();
     const firstPlayerScore = app.locals.Match.firstPlayerScore(currentMatchResultPlayer1);
     const secondPlayerScore = app.locals.Match.secondPlayerScore(currentMatchResultPlayer2);
+    const announceWinner = app.locals.Match.announceWinner();
 
     if (app.locals.Match.gameStops()) {
         res.render("gameResult", {
@@ -26,6 +27,7 @@ router.post("/", (req, res) => {
             secondPlayer: secondPlayer.name,
             firstPlayerScore: firstPlayerScore,
             secondPlayerScore: secondPlayerScore,
+            announceWinner: announceWinner
         });
     } else {
         res.render("playerChoices", {
