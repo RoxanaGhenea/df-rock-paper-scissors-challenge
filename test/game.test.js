@@ -73,8 +73,6 @@ describe('Rock Paper Scissors Game Tests', () => {
                 } else {
                     console.log("Response Body:", res.text);
                     expect(res).to.have.status(200);
-                    
-                    // Define the regular expression pattern for the expected text
                     const expectedPattern = /chose\s+and\s+chose\s+<br>\s+'s score is 0 and 's score is 0/i;
                     expect(res.text).to.match(expectedPattern);
                     done();
