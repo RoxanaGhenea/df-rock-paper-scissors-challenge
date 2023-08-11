@@ -1,6 +1,7 @@
 import chai from "chai";
 import chaiHttp from 'chai-http';
 import app from "../app.js";
+import RPSGameSet from "../src/gameSet.js";
 
 chai.use(chaiHttp);
 const expect = chai.expect;
@@ -49,7 +50,7 @@ describe('Rock Paper Scissors Game Tests', () => {
             });
     });
 
-    it('should display "Next turn" link after playerChoices', (done) => {
+    it('Should display "Next turn" link after playerChoices', (done) => {
         chai.request(app)
             .post('/playerChoices')
             .send({ player2Choice: '0' })
@@ -72,7 +73,11 @@ describe('Rock Paper Scissors Game Tests', () => {
             });
     });
 
-
+    it('Should correctly determine if the game stops', () => {
+        const gameSet = new RPSGameSet();
+        gameSet.setMatchesRounds(3);
+        gameSet.playerChoices.push(0, 1, 0, 1, 2, 0);
+        expect(gameSet.gameStops()).to.be.true;
+    });
     
-      
 })
