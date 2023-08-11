@@ -15,5 +15,19 @@ describe('Rock Paper Scissors Game Tests', () => {
                 done();
             });
     });
+
+    it('Should set up players and rounds', (done) => {
+        chai.request(app)
+            .post('/1stPlayer')
+            .send({ player1: 'Player1', player2: 'Player2', rounds: 3 })
+            .end((err, res) => {
+                expect(res).to.have.status(200);
+                expect(res).to.be.html;
+                expect(res.redirects).to.have.lengthOf(1);
+                expect(res.redirects[0]).to.match(/\/1stPlayer$/);
+                done();
+            });
+    });
     
+
 })
