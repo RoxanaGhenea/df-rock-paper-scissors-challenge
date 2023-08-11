@@ -1,0 +1,28 @@
+body {
+    background-color: #16161a;
+}
+
+h1 {
+    color: #fffffe;
+}
+
+p {
+    color: #a7a9be;
+}
+
+span {
+    font-size: xx-large;
+}
+
+input[type="submit"], #turn-link {
+    background-color: #7f5af0;
+    color: #fffffe;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+}
+
+#turn-link {
+    text-decoration: none;
+    padding:0 5px;
+}

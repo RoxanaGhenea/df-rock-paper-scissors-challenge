@@ -8,7 +8,7 @@
 5. [app.locals and res.locals life cycle](https://stackoverflow.com/questions/14642692/app-locals-and-res-locals-life-cycle)
 
 ### Self-evaluation:
-1. I acknowledge that the code's structure requires improvement. The decoupling process has been deferred due to my ambitious goals of working on the extended criteria which eventually led to me running out of time.
+1. I acknowledge that the code's structure requires improvement. The decoupling process has been deferred due to my ambitious goals of working on the extended criteria which eventually led to me running out of time. For example using "app.locals.Match = new RPSGameSet();" in app.js is one of the major problems with this game as I don't see how people can play multiple games at the same time without causing an issue, and this could be difficult to address as I might need to use some sort of trace id.
 2. Enhancing the website's styling would have been beneficial.
 3. There is potential to expand the test suite further.
 4. A comprehensive review of this module is needed.
