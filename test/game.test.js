@@ -79,5 +79,11 @@ describe('Rock Paper Scissors Game Tests', () => {
         gameSet.playerChoices.push(0, 1, 0, 1, 2, 0);
         expect(gameSet.gameStops()).to.be.true;
     });
+
+    it('Should store player choices', () => {
+        const gameSet = new RPSGameSet();
+        gameSet.playerChoices.push(0);
+        expect(gameSet.playerChoices).to.deep.equal([0]);
+    });
     
 })
