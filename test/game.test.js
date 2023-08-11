@@ -28,6 +28,18 @@ describe('Rock Paper Scissors Game Tests', () => {
                 done();
             });
     });
+
+    it('Should make choices for players', (done) => {
+        chai.request(app)
+            .post('/2ndPlayer')
+            .send({ player1Choice: 0 })
+            .end((err, res) => {
+                expect(res).to.have.status(200);
+                expect(res.request.url).to.match(/\/2ndPlayer$/);
+                done();
+            });
+    });
+    
     
 
 })
