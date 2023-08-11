@@ -48,5 +48,31 @@ describe('Rock Paper Scissors Game Tests', () => {
                 done();
             });
     });
+
+    it('should display "Next turn" link after playerChoices', (done) => {
+        chai.request(app)
+            .post('/playerChoices')
+            .send({ player2Choice: '0' })
+            .end((err, res) => {
+                expect(res).to.have.status(200);
+                expect(res.text).to.include('Next turn');
+                done();
+            });
+    });
+
+    it('Should display game result', (done) => {
+        chai.request(app)
+            .post('/playerChoices')
+            .send({ player2Choice: '2' })
+            .end((err, res) => {
+                expect(res).to.have.status(200);
+                const expectedText = "<h1>\n         chose  and  chose \n        's score is 0 and 's score is 0\n    </h1>";
+                expect(res.text).to.include(expectedText);
+                done();
+            });
+    });
+
+
+    
       
 })
