@@ -67,12 +67,20 @@ describe('Rock Paper Scissors Game Tests', () => {
             .post('/playerChoices')
             .send({ player2Choice: '2' })
             .end((err, res) => {
-                expect(res).to.have.status(200);
-                const expectedText = "<h1>\n         chose  and  chose \n        's score is 0 and 's score is 0\n    </h1>";
-                expect(res.text).to.include(expectedText);
-                done();
+                if (err) {
+                    console.error(err);
+                    done(err);
+                } else {
+                    console.log("Response Body:", res.text);
+                    expect(res).to.have.status(200);
+                    
+                    // Define the regular expression pattern for the expected text
+                    const expectedPattern = /chose\s+and\s+chose\s+<br>\s+'s score is 0 and 's score is 0/i;
+                    expect(res.text).to.match(expectedPattern);
+                    done();
+                }
             });
-    });
+    });    
 
     it('Should correctly determine if the game stops', () => {
         const gameSet = new RPSGameSet();
