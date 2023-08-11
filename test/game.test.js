@@ -39,7 +39,14 @@ describe('Rock Paper Scissors Game Tests', () => {
                 done();
             });
     });
-    
-    
 
+    it('Should clear game data after cleanup', (done) => {
+        chai.request(app)
+            .post('/cleanup')
+            .end((err, res) => {
+                expect(res).to.redirectTo(/\/$/);
+                done();
+            });
+    });
+      
 })
