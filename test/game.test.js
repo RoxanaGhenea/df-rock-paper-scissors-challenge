@@ -2,6 +2,7 @@ import chai from "chai";
 import chaiHttp from 'chai-http';
 import app from "../app.js";
 import RPSGameSet from "../src/gameSet.js";
+import playerChoicesRouter from "../app.js";
 
 chai.use(chaiHttp);
 const expect = chai.expect;
@@ -103,5 +104,5 @@ describe('Rock Paper Scissors Game Tests', () => {
         gameSet.secondPlayerScore(false);
         expect(gameSet.secondPlayerScore()).to.equal(0);
     });
-    
+
 })
