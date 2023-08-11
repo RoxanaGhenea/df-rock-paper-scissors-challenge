@@ -85,5 +85,11 @@ describe('Rock Paper Scissors Game Tests', () => {
         gameSet.playerChoices.push(0);
         expect(gameSet.playerChoices).to.deep.equal([0]);
     });
+
+    it('Should correctly get choice label', () => {
+        const gameSet = new RPSGameSet();
+        const choiceLabel = gameSet.getChoiceLabel(1);
+        expect(choiceLabel).to.equal('scissors');
+    });
     
 })
