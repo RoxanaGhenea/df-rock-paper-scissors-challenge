@@ -31,6 +31,7 @@
 |            |                          | secondPlayer()                                  | @String  |
 |            |                          | secondPlayerChoice()                            | @Number  |
 |            |                          | secondPlayerScore(@boolean)                     | @Number  |
+|            |                          | announceWinner()                                | @String  |
 | RPSResult  |                          | player1Wins()                                   | @Boolean |
 |            |                          | player2Wins()                                   | @Boolean |
 
