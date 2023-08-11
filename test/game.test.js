@@ -95,8 +95,13 @@ describe('Rock Paper Scissors Game Tests', () => {
     it('Should correctly calculate first player score', () => {
         const gameSet = new RPSGameSet();
         gameSet.firstPlayerScore(true);
-
         expect(gameSet.firstPlayerScore()).to.equal(1);
+    });
+
+    it('Should correctly calculate second player score', () => {
+        const gameSet = new RPSGameSet();
+        gameSet.secondPlayerScore(false);
+        expect(gameSet.secondPlayerScore()).to.equal(0);
     });
     
 })
