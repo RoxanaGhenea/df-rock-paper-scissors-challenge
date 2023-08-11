@@ -91,5 +91,12 @@ describe('Rock Paper Scissors Game Tests', () => {
         const choiceLabel = gameSet.getChoiceLabel(1);
         expect(choiceLabel).to.equal('scissors');
     });
+
+    it('Should correctly calculate first player score', () => {
+        const gameSet = new RPSGameSet();
+        gameSet.firstPlayerScore(true);
+
+        expect(gameSet.firstPlayerScore()).to.equal(1);
+    });
     
 })
