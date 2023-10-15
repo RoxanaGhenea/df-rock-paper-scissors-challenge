@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <h1 class="mb-5">Welcome to Rock, Paper, Scissors Game</h1>
+        <p>Please add your names to begin game!</p>
+        <form action="/1stPlayer" method="post">
+            <p>Player 1: <input id="player1-name-textbox" type="text" name="player1" required></p>
+            <p>Player 2: <input id="player2-name-textbox" type="text" name="player2" required></p>
+            <p>How many matches would you like to play?</p>
+            <input id="rounds" type="number" min="1" name="rounds" required>
+            <input id="submit-names" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>
